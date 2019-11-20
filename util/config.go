@@ -13,7 +13,7 @@ const ERROR_PATH = "/tmp/error"
 const CONSOLE_FILE = CLUSTER_PATH + "/console.txt"
 
 const RELEASE_FILE = "/Users/amanpreet.singh/Documents/release.txt"
-const DEFAULT_PARALELISM = 50
+const DEFAULT_PARALELISM = 10
 
 const DEBUG_FILE = "/tmp/kohandebug"
 
