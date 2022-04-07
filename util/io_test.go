@@ -12,7 +12,7 @@ import (
 
 	"strings"
 
-	. "github.com/amanhigh/go-fun/util"
+	. "github.com/vikasverma155/go-fun/util"
 )
 
 var _ = Describe("Io", func() {

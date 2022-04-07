@@ -5,7 +5,7 @@ import (
 
 	"errors"
 
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 type LinkInfo struct {

@@ -33,7 +33,7 @@ func (g *Generator) template() (*template.Template, error) {
 		return nil, errors.New("Unsupported format")
 	}
 
-	//tmpl, e := template.ParseFiles("/Users/amanpreet.singh/IdeaProjects/GoArena/src/github.com/amanhigh/go-fun/jsongen/tmpl/write_to_json.tmpl")
+	//tmpl, e := template.ParseFiles("/Users/vikas.verma/go/src/github.com/vikasverma155/go-fun/jsongen/tmpl/write_to_json.tmpl")
 	tmpl := template.New("jsonTemplate")
 	tmpl, e := tmpl.Parse(templateString())
 	return tmpl, e

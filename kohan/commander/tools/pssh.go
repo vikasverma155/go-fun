@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"strings"
 
-	. "github.com/amanhigh/go-fun/util"
+	. "github.com/vikasverma155/go-fun/util"
 )
 
 var FastPssh = Pssh{20, OUTPUT_PATH, ERROR_PATH, false}

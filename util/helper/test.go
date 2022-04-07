@@ -5,7 +5,7 @@ import (
 
 	"fmt"
 
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 func ReadCountInts(scanner *bufio.Scanner) (n int, ints []int) {

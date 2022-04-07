@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/amanhigh/go-fun/kohan/command"
+	"github.com/vikasverma155/go-fun/kohan/command"
 )
 
 func main() {

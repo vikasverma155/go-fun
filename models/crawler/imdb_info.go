@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/amanhigh/go-fun/util"
-	"github.com/amanhigh/go-fun/util/helper"
+	"github.com/vikasverma155/go-fun/util"
+	"github.com/vikasverma155/go-fun/util/helper"
 )
 
 type ImdbInfo struct {

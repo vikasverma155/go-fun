@@ -3,7 +3,7 @@ package tools
 import (
 	"fmt"
 
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 func Sync(srcHost string, srcDir string, targetDir string, targetHosts []string) {

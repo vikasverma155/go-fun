@@ -15,19 +15,20 @@
 package gojenkins
 
 import (
+	"context"
 	"errors"
 	"strconv"
 )
 
 type View struct {
-	Raw     *viewResponse
+	Raw     *ViewResponse
 	Jenkins *Jenkins
 	Base    string
 }
 
-type viewResponse struct {
+type ViewResponse struct {
 	Description string        `json:"description"`
-	Jobs        []job         `json:"jobs"`
+	Jobs        []InnerJob    `json:"jobs"`
 	Name        string        `json:"name"`
 	Property    []interface{} `json:"property"`
 	URL         string        `json:"url"`
@@ -42,10 +43,10 @@ var (
 )
 
 // Returns True if successfully added Job, otherwise false
-func (v *View) AddJob(name string) (bool, error) {
+func (v *View) AddJob(ctx context.Context, name string) (bool, error) {
 	url := "/addJobToView"
 	qr := map[string]string{"name": name}
-	resp, err := v.Jenkins.Requester.Post(v.Base+url, nil, nil, qr)
+	resp, err := v.Jenkins.Requester.Post(ctx, v.Base+url, nil, nil, qr)
 	if err != nil {
 		return false, err
 	}
@@ -56,10 +57,10 @@ func (v *View) AddJob(name string) (bool, error) {
 }
 
 // Returns True if successfully deleted Job, otherwise false
-func (v *View) DeleteJob(name string) (bool, error) {
+func (v *View) DeleteJob(ctx context.Context, name string) (bool, error) {
 	url := "/removeJobFromView"
 	qr := map[string]string{"name": name}
-	resp, err := v.Jenkins.Requester.Post(v.Base+url, nil, nil, qr)
+	resp, err := v.Jenkins.Requester.Post(ctx, v.Base+url, nil, nil, qr)
 	if err != nil {
 		return false, err
 	}
@@ -69,31 +70,26 @@ func (v *View) DeleteJob(name string) (bool, error) {
 	return false, errors.New(strconv.Itoa(resp.StatusCode))
 }
 
-
 func (v *View) GetDescription() string {
 	return v.Raw.Description
 }
 
-
-func (v *View) GetJobs() []job {
+func (v *View) GetJobs() []InnerJob {
 	return v.Raw.Jobs
 }
-
 
 func (v *View) GetName() string {
 	return v.Raw.Name
 }
 
-
 func (v *View) GetUrl() string {
 	return v.Raw.URL
 }
 
-
-func (v *View) Poll() (int, error) {
-	_, err := v.Jenkins.Requester.GetJSON(v.Base, v.Raw, nil)
+func (v *View) Poll(ctx context.Context) (int, error) {
+	response, err := v.Jenkins.Requester.GetJSON(ctx, v.Base, v.Raw, nil)
 	if err != nil {
 		return 0, err
 	}
-	return v.Jenkins.Requester.LastResponse.StatusCode, nil
+	return response.StatusCode, nil
 }

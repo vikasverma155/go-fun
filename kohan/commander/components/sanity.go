@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	log "github.com/Sirupsen/logrus"
-	. "github.com/amanhigh/go-fun/kohan/commander/tools"
-	. "github.com/amanhigh/go-fun/util"
+	log "github.com/sirupsen/logrus"
+	. "github.com/vikasverma155/go-fun/kohan/commander/tools"
+	. "github.com/vikasverma155/go-fun/util"
 )
 
 var checks = []string{"down", "inactive", "not"}
@@ -43,7 +43,7 @@ func VersionCheck(pkgNameCsv string, cluster string) {
 func VerifyStatus(cmd string, cluster string) {
 	PrintBlue("Running Sanity on Cluster: " + cluster)
 
-	NORMAL_PSSH.Run(cmd, cluster, 200, true)
+	NORMAL_PSSH.Run(cmd, cluster, DEFAULT_PARALELISM, true)
 	os.Chdir(OUTPUT_PATH)
 
 	PrintCommand("cat * | awk '{print $1,$2,$3}' | sort | uniq -c | sort -r")

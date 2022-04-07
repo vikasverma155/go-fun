@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	log "github.com/Sirupsen/logrus"
-	. "github.com/amanhigh/go-fun/models/crawler"
-	"github.com/amanhigh/go-fun/util"
+	log "github.com/sirupsen/logrus"
+	. "github.com/vikasverma155/go-fun/models/crawler"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 type ImdbCrawler struct {

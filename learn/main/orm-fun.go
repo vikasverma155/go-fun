@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	log "github.com/Sirupsen/logrus"
-	"github.com/amanhigh/go-fun/learn/orm/model"
-	"github.com/amanhigh/go-fun/util"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	log "github.com/sirupsen/logrus"
+	"github.com/vikasverma155/go-fun/learn/orm/model"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 type Product struct {
@@ -46,7 +46,7 @@ func (p *Product) AfterFind() (err error) {
 var jsonLogger = &log.Logger{Out: os.Stdout, Formatter: new(log.JSONFormatter), Level: log.InfoLevel}
 
 func main() {
-	db := util.NewDb("/Users/amanpreet.singh/IdeaProjects/GoArena/src/github.com/amanhigh/go-fun/learn/orm/db")
+	db := util.NewDb("/Users/vikas.verma/go/src/github.com/vikasverma155/go-fun/learn/orm/db")
 	defer db.Close()
 
 	prepLogger()

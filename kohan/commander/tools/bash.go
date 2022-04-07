@@ -7,8 +7,8 @@ import (
 	"strings"
 	"sync"
 
-	log "github.com/Sirupsen/logrus"
-	. "github.com/amanhigh/go-fun/util"
+	log "github.com/sirupsen/logrus"
+	. "github.com/vikasverma155/go-fun/util"
 )
 
 func RunCommandPrintError(cmd string) string {

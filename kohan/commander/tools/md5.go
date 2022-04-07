@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 type md5Info struct {

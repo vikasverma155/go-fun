@@ -3,7 +3,7 @@ package command
 import (
 	"os"
 
-	"github.com/amanhigh/go-fun/kohan/commander/tools"
+	"github.com/vikasverma155/go-fun/kohan/commander/tools"
 	"github.com/spf13/cobra"
 )
 

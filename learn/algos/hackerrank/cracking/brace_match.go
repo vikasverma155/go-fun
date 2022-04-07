@@ -1,6 +1,6 @@
 package cracking
 
-import "github.com/amanhigh/go-fun/util/ds"
+import "github.com/vikasverma155/go-fun/util/ds"
 
 func MatchBrace(input string) (match bool) {
 	stack := ds.NewStack()

@@ -15,8 +15,8 @@ import (
 	"net/url"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
-	"github.com/amanhigh/go-fun/models"
+	log "github.com/sirupsen/logrus"
+	"github.com/vikasverma155/go-fun/models"
 	"golang.org/x/oauth2/clientcredentials"
 )
 

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 func Printf(templateFile string, paramFile string, marker string) {

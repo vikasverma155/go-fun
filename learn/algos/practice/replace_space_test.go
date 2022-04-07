@@ -4,7 +4,7 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	. "github.com/amanhigh/go-fun/learn/algos/practice"
+	. "github.com/vikasverma155/go-fun/learn/algos/practice"
 )
 
 var _ = Describe("ReplaceSpace", func() {

@@ -1,6 +1,6 @@
 package cracking
 
-import . "github.com/amanhigh/go-fun/util/ds"
+import . "github.com/vikasverma155/go-fun/util/ds"
 
 /**
 https://www.youtube.com/watch?v=VmogG01IjYc

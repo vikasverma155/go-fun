@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/amanhigh/go-fun/kohan/commander/tools"
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/kohan/commander/tools"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 const TEMP_CURL_FILE = "/tmp/curl.json"

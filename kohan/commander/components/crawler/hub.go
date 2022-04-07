@@ -2,9 +2,9 @@ package crawler
 
 import (
 	"github.com/PuerkitoBio/goquery"
-	"github.com/amanhigh/go-fun/models/crawler"
-	"github.com/amanhigh/go-fun/util"
-	"github.com/amanhigh/go-fun/util/helper"
+	"github.com/vikasverma155/go-fun/models/crawler"
+	"github.com/vikasverma155/go-fun/util"
+	"github.com/vikasverma155/go-fun/util/helper"
 )
 
 type HubCrawler struct {

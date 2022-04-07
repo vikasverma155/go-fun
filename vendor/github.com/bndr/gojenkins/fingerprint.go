@@ -15,18 +15,19 @@
 package gojenkins
 
 import (
-	"fmt"
+	"context"
 	"errors"
+	"fmt"
 )
 
-type Fingerprint struct {
+type FingerPrint struct {
 	Jenkins *Jenkins
 	Base    string
 	Id      string
-	Raw     *fingerPrintResponse
+	Raw     *FingerPrintResponse
 }
 
-type fingerPrintResponse struct {
+type FingerPrintResponse struct {
 	FileName string `json:"fileName"`
 	Hash     string `json:"hash"`
 	Original struct {
@@ -45,21 +46,21 @@ type fingerPrintResponse struct {
 	} `json:"usage"`
 }
 
-func (f Fingerprint) Valid() (bool, error) {
-	status, err := f.Poll()
+func (f FingerPrint) Valid(ctx context.Context) (bool, error) {
+	status, err := f.Poll(ctx)
 
 	if err != nil {
 		return false, err
 	}
 
 	if status != 200 || f.Raw.Hash != f.Id {
-		return false, errors.New(fmt.Sprintf("Jenkins says %s is Invalid or the Status is unknown", f.Id))
+		return false, fmt.Errorf("Jenkins says %s is Invalid or the Status is unknown", f.Id)
 	}
 	return true, nil
 }
 
-func (f Fingerprint) ValidateForBuild(filename string, build *Build) (bool, error) {
-	valid, err := f.Valid()
+func (f FingerPrint) ValidateForBuild(ctx context.Context, filename string, build *Build) (bool, error) {
+	valid, err := f.Valid(ctx)
 	if err != nil {
 		return false, err
 	}
@@ -78,18 +79,18 @@ func (f Fingerprint) ValidateForBuild(filename string, build *Build) (bool, erro
 	return false, nil
 }
 
-func (f Fingerprint) GetInfo() (*fingerPrintResponse, error) {
-	_, err := f.Poll()
+func (f FingerPrint) GetInfo(ctx context.Context) (*FingerPrintResponse, error) {
+	_, err := f.Poll(ctx)
 	if err != nil {
 		return nil, err
 	}
 	return f.Raw, nil
 }
 
-func (f Fingerprint) Poll() (int, error) {
-	_, err := f.Jenkins.Requester.GetJSON(f.Base+f.Id, f.Raw, nil)
+func (f FingerPrint) Poll(ctx context.Context) (int, error) {
+	response, err := f.Jenkins.Requester.GetJSON(ctx, f.Base+f.Id, f.Raw, nil)
 	if err != nil {
 		return 0, err
 	}
-	return f.Jenkins.Requester.LastResponse.StatusCode, nil
+	return response.StatusCode, nil
 }

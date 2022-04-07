@@ -3,10 +3,10 @@ package command
 import (
 	"strings"
 
-	"github.com/amanhigh/go-fun/kohan/commander/components"
-	"github.com/amanhigh/go-fun/kohan/commander/tools"
-	"github.com/amanhigh/go-fun/util"
 	"github.com/spf13/cobra"
+	"github.com/vikasverma155/go-fun/kohan/commander/components"
+	"github.com/vikasverma155/go-fun/kohan/commander/tools"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 var allCmd = &cobra.Command{

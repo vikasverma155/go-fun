@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 var TIME_OUT_FILE = "/tmp/time.out"

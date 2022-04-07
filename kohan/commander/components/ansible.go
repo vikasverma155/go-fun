@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/amanhigh/go-fun/kohan/commander/tools"
-	. "github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/kohan/commander/tools"
+	. "github.com/vikasverma155/go-fun/util"
 )
 
 func MergeMux(splitMap map[string][]string) map[string][]string {

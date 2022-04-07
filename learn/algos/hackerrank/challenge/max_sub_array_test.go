@@ -8,9 +8,9 @@ import (
 
 	"fmt"
 
-	. "github.com/amanhigh/go-fun/learn/algos/hackerrank/challenge"
-	"github.com/amanhigh/go-fun/util"
-	"github.com/amanhigh/go-fun/util/helper"
+	. "github.com/vikasverma155/go-fun/learn/algos/hackerrank/challenge"
+	"github.com/vikasverma155/go-fun/util"
+	"github.com/vikasverma155/go-fun/util/helper"
 )
 
 var _ = Describe("MaxSubArray", func() {

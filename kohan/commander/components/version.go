@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/amanhigh/go-fun/kohan/commander/tools"
-	"github.com/amanhigh/go-fun/util"
+	"github.com/vikasverma155/go-fun/kohan/commander/tools"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 func GetVersion(pkgName string, host string, versionType string, comment string) {

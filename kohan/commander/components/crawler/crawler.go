@@ -9,8 +9,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	. "github.com/amanhigh/go-fun/models/crawler"
-	"github.com/amanhigh/go-fun/util"
+	. "github.com/vikasverma155/go-fun/models/crawler"
+	"github.com/vikasverma155/go-fun/util"
 )
 
 const (
